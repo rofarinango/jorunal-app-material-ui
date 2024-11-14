@@ -11,17 +11,18 @@ export const JournalPage = () => {
 
   const dispatch = useDispatch();
 
-  const { isSaving } = useSelector( state => state.journal );
+  const { isSaving, active } = useSelector( state => state.journal );
 
   const onClickNewNote = () => {
     dispatch(startNewNote());
   }
   return (
       <JournalLayout>
-        {/* <Typography>Laborum excepteur tempor elit do nostrud laboris sint proident id. Quis ut consequat veniam pariatur reprehenderit nostrud deserunt dolore. Id non reprehenderit duis commodo esse exercitation duis anim amet ullamco. Magna velit anim elit nisi pariatur id. Laborum anim veniam amet eu culpa ea duis consectetur pariatur eu cillum duis commodo proident. Aliqua amet dolor id reprehenderit irure adipisicing laborum do aute.</Typography> */}
-        {/* NothingSelected */}
-        <NothingSelectedView/>
-        {/* NoteView */}
+        {
+          (!!active)
+          ? <NoteView />
+          : <NothingSelectedView />
+        }
 
         <IconButton
         onClick={onClickNewNote}
