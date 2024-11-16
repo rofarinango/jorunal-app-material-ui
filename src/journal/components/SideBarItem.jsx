@@ -4,7 +4,7 @@ import { useMemo } from 'react'
 import { setActiveNote } from '../../store/journal/journalSlice'
 import { useDispatch } from 'react-redux'
 
-export const SideBarItem = ({ title, body, id, date, imageURLS }) => {
+export const SideBarItem = ({ title, body, id, date, imageURLS=[] }) => {
 
     const dispatch = useDispatch();
     const onClickNote = () => {
