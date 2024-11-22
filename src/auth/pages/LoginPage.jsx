@@ -1,6 +1,6 @@
 import { useMemo } from 'react'
 import { Link as RouterLink} from 'react-router-dom'
-import { Google } from "@mui/icons-material"
+import Google from "@mui/icons-material/Google";
 import { Grid2, TextField, Typography,Button, Link, Alert } from "@mui/material"
 import { AuthLayout } from '../layout/AuthLayout'
 import { useForm } from '../../hooks'
@@ -8,8 +8,8 @@ import { useDispatch, useSelector } from 'react-redux'
 import { startGoogleSignIn, startLoginWithEmailPassword } from '../../store/auth'
 
 const formData = {
-  email: 'fernando@google.com',
-  password: '123456'
+  email: '',
+  password: ''
 }
 export const LoginPage = () => {
 
